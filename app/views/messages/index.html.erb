@@ -1,0 +1,10 @@
+  <div class="container">
+    <%# <% if user_signed_in? %>
+      <%= form_with(model: @messages) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <%# <% else %> 
+      <%# <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
