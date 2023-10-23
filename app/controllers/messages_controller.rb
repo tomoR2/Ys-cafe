@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   end
   
   def create
-    @message = Message.create(message_params)
+    @message = Message.new(message_params)
     if @message.save
       redirect_to messages_path
     end
@@ -12,8 +12,8 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:text)
+    params.permit(:text)
   end
 end
 
-# .merge(user_id: current_user.id, message_id: params[:message_id])
+# params.require(:message).permit(:text).merge(user_id: current_user.id, message_id: params[:message_id])

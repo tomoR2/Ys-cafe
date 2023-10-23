@@ -57,13 +57,13 @@
   <div class="container">
     <%# <% if user_signed_in? %>
     <div class="fixed-element">
-      <%= form_with(model: @messages, url: messages_path) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする" %>
+      <%= form_with(model: @message, url: messages_path) do |form| %>
+        <%= form.text_area :message, placeholder: "コメントする" %>
         <label class="form-image">
         <%= form.submit "送信" %>
         <%= form.submit "画像" %>
       <% end %>
-      </div>
+    </div>
   </div>
 
 </body>
