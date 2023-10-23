@@ -77,4 +77,6 @@ gem 'jquery-rails'
 
 gem 'mini_racer' #インストールするだけでJavaScript読込の改善に期待できる
 
+gem 'pry-rails'
+
 gem 'devise'

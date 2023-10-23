@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_10_23_025456) do
+
   create_table "messages", charset: "utf8mb4", force: :cascade do |t|
     t.text "text"
     t.bigint "user_id", null: false
