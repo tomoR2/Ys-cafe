@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="application.css">
+  <%# <link rel="stylesheet" href="application.css"> %>
   <%= stylesheet_link_tag 'application' %>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
@@ -57,7 +57,7 @@
   <div class="container">
     <%# <% if user_signed_in? %>
     <div class="fixed-element">
-      <%= form_with(model: @messages) do |form| %>
+      <%= form_with(model: @messages, url: messages_path) do |form| %>
         <%= form.text_area :text, placeholder: "コメントする" %>
         <label class="form-image">
         <%= form.submit "送信" %>
