@@ -3,11 +3,16 @@ class MessagesController < ApplicationController
   end
   
   def create
-    Message.create(message_params)
+    @message = Message.create(message_params)
+    @message.save
   end
+
+  
 
   private
   def message_params
-    params.require(:message).permit(:text).merge(user_id: current_user.id, message_id: params[:message_id])
+    params.require(:message).permit(:text)
   end
 end
+
+# .merge(user_id: current_user.id, message_id: params[:message_id])
