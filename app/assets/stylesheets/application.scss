@@ -34,11 +34,20 @@
 
 .b-example-divider {
   width: 100%;
-  height: 3rem;
+  height: 3%;
   background-color: rgba(0, 0, 0, .1);
   border: solid rgba(0, 0, 0, .15);
   border-width: 1px 0;
   box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+body {
+  background-image: url('/assets/夜カフェ.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 100vh; /* 画面の高さに合わせる */
+  margin: 0; /* 余白を削除 */
+  padding: 0; /* 余白を削除 */
 }
 
 .b-example-vr {
@@ -71,7 +80,7 @@
 }
 
 .btn-bd-primary {
-  --bd-violet-bg: #712cf9;
+  --bd-violet-bg: #c6bfd3;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
   --bs-btn-font-weight: 600;
@@ -83,7 +92,7 @@
   --bs-btn-hover-border-color: #6528e0;
   --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
   --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-bg: #92b1ce;
   --bs-btn-active-border-color: #5a23c8;
 }
 .bd-mode-toggle {
