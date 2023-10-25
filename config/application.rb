@@ -16,6 +16,9 @@ module YsCafe
 
     # デフォルトのロケールを設定
     config.i18n.default_locale = :en
+    
+    # ミニマジックの記述
+    config.active_storage.variant_processor = :mini_magick
 
     # Configuration for the application, engines, and railties goes here.
     #
