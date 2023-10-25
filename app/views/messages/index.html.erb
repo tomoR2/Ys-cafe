@@ -2,69 +2,53 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <%# <link rel="stylesheet" href="application.css"> %>
   <%= stylesheet_link_tag 'application' %>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%# <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> %>
 </head>
 <body>
   <div class="container">
   <header class="mb-auto">
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-1 active" aria-current="page" href="#">Home</a>
+        <a class="nav-link fw-bold py-1 px-1 active" aria-current="page" href="/users/index">Home</a>
         <a class="nav-link fw-bold py-1 px-1" href="#">Gallary</a>
-        <a class="nav-link fw-bold py-1 px-1" href="#">Fanboard</a>
+        <a class="nav-link fw-bold py-1 px-1" href="/messages/index">Fanboard</a>
         <a class="nav-link fw-bold py-1 px-1" href="#">Request</a>
       </nav>
   </header>
+  </div class="container">
 
-    <div class="chat bg-light p-4">
-      <div class="message d-flex flex-row align-items-start mb-4">
-        <div class="message-icon rounded-circle bg-secondary text-dark fs-3">
-          <i class="fas fa-user"></i>
-
-        </div><!-- .message-icon -->
-        <p class="message-text p-2 ms-2 mb-0 bg-warning">
-          サンプルテキスト。サンプルテキスト。サンプルテキスト。
-        </p><!-- .message-text -->
-      </div><!-- .message -->
-      <div class="message d-flex flex-row-reverse align-items-start mb-4">
-        <div class="message-icon rounded-circle bg-secondary text-white fs-3">
-          <i class="fas fa-user"></i>
-        </div><!-- .message-icon -->
-        <p class="message-text p-2 me-2 mb-0 bg-info">
-          サンプルテキスト。サンプルテキスト。サンプルテキスト。
-        </p><!-- .message-text -->
-      </div><!-- .message -->
-      <div class="message d-flex flex-row align-items-start mb-4">
-        <div class="message-icon rounded-circle bg-secondary text-white fs-3">
-          <i class="fas fa-user"></i>
-        </div><!-- .message-icon -->
-        <p class="message-text p-2 ms-2 mb-0 bg-warning">
-          サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。
-        </p><!-- .message-text -->
-      </div><!-- .message -->
-      <div class="message d-flex flex-row-reverse align-items-start mb-4">
-        <div class="message-icon rounded-circle bg-secondary text-white fs-3">
-          <i class="fas fa-user"></i>
-        </div><!-- .message-icon -->
-        <p class="message-text p-2 me-2 mb-0 bg-info">
-          サンプルテキスト。サンプルテキスト。サンプルテキスト。
-        </p><!-- .message-text -->
-      </div><!-- .message -->
-    </div><!-- .chat -->
-  </div><!-- .container -->
-
-  <div class="container">
-    <%# <% if user_signed_in? %>
-    <div class="fixed-element">
-      <%= form_with(model: @message, url: messages_path) do |form| %>
-        <%= form.text_area :message, placeholder: "コメントする" %>
-        <label class="form-image">
-        <%= form.submit "送信" %>
-        <%= form.submit "画像" %>
-      <% end %>
+ <!-- .chat -->
+<div class="chat p-5" >
+  <% @messages.each do |message| %>
+    <div class="message <%= message.user_id == current_user.id ? 'sent' : 'received' %> mb-4">
+      <div class="message-icon rounded-circle bg-secondary text-dark fs-3">
+        <i class="fas fa-user"></i>
+      </div>
+      <!-- カレントユーザーかどうかでコメント色が変化 -->
+      <p class="message-text p-2 mb-0 <%= message.user_id == current_user.id ? 'bg-info' : 'bg-warning' %>">
+        <%= message.message_text %>
+      </p>
     </div>
-  </div>
+  <% end %>
+ </div>
+ <!-- .chat -->
+
+<div class="container">
+  <% if user_signed_in? %>
+  <div class="fixed-element" style="background-color: #003366; padding: 10px;">
+     <%= form_with(model: @message, url: messages_path) do |form| %>
+       <div style="display: flex; space-between; align-items: center;">
+         <%= form.text_area :message_text, placeholder: "コメントする", style: "width: 70%;" %>
+         <%= form.submit "画像", name: 'commit_action', value: '画像', style: "width: 15%;" %>
+         <%= form.submit "送信", name: 'commit_action', value: '送信', style: "width: 15%;" %>
+      </div>
+      <% end %>
+  <% end %>
+   </div>
+ </div>
+</div>
+
 
 </body>
 </html>
