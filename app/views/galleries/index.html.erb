@@ -25,11 +25,11 @@
       }
 
        .text-body-secondary {
-       color: blue; /* 文字色を白に設定 */
+       color: white; /* 文字色を白に設定 */
       }
 
        .fw-bold {
-       color: blue; /* 文字色を白に設定 */
+       color: white; /* 文字色を白に設定 */
        font-weight: bold; /* 太さを数値で指定 */
        /* font-size: 18px; フォントサイズを指定 */
       }
@@ -48,7 +48,7 @@
           <button class="btn btn-primary">Gallery</button></a>
         <a class="nav-link fw-bold py-1 px-1" href="/messages/index">
           <button class="btn btn-primary">Fanboard</button></a>
-        <a class="nav-link fw-bold py-1 px-1" href="#">
+        <a class="nav-link fw-bold py-1 px-1" href="https://forms.gle/FPcZF8x6uy66JNgu8">
           <button class="btn btn-primary">Request</button></a>
       </nav>
   </header>
@@ -71,9 +71,9 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-            <%= image_tag("都会.jpg", alt: "Image Description", width: "100%", height: 225) %>          
+            <%= image_tag("hoian.jpg", alt: "Image Description", width: "100%", height: 225) %>          
             <div class="card-body">
-              <p class="card-text">都会</p>
+              <p class="card-text" style="margin: 0;">ホイアン</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 </div>
@@ -90,9 +90,9 @@
 
         <div class="col">
           <div class="card shadow-sm">
-            <%= image_tag("op1.png", alt: "Image Description", width: "100%", height: 225) %>          
+            <%= image_tag("ポルトガル.jpg", alt: "Image Description", width: "100%", height: 225) %>          
             <div class="card-body">
-              <p class="card-text" style="margin: 0;">うさぎ</p>
+              <p class="card-text" style="margin: 0;">ポルトガル</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 </div>
@@ -102,9 +102,24 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <%= image_tag("ポルトガル.jpg", alt: "Image Description", width: "100%", height: 225) %>          
+            <%= image_tag("op2.png", alt: "Image Description", width: "100%", height: 225) %>          
             <div class="card-body">
-              <p class="card-text">ポルトガル</p>
+              <p class="card-text"style="margin: 0;">拾ってください</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%# 管理者用、あとでつかう %>
+                  <%# <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <%= image_tag("op3.png", alt: "Image Description", width: "100%", height: 225) %>          
+            <div class="card-body">
+              <p class="card-text"style="margin: 0;">全部持ち帰り</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <%# 管理者用、あとでつかう %>
