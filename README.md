@@ -11,6 +11,7 @@
 | family_name             | string | null: false              |
 | first_name              | string | null: false              |
 | birth_day               | date   | null: false              |
+| admin                   | boolean| default: false           |管理者権限
 
 ### Association
 has_many :messages

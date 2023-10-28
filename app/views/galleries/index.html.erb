@@ -51,6 +51,13 @@
         <a class="nav-link fw-bold py-1 px-1" href="https://forms.gle/FPcZF8x6uy66JNgu8">
           <button class="btn btn-primary">Request</button></a>
       </nav>
+      
+  <% if user_signed_in? %>
+  <% if current_user == @user || current_user.admin? %>
+    <%= link_to "編集", root_path %>
+  <% end %>
+<% end %>
+
   </header>
   </div class="container">
 
@@ -133,11 +140,15 @@
 
 </main>
 
+
+
+
   <div class="container">
     <p class="float-end mb-1">
       <a href="#">上部に戻る</a>
     </p>
   </div>
+
 
 
 <div class="container">
